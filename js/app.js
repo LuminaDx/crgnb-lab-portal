@@ -1,5 +1,5 @@
 /* Dev portal auth + orders. Client-side only. Replace with Firebase/Auth0 for production. */
-const STORAGE_USERS = "crgnb_users_v2";
+const STORAGE_USERS = "crgnb_users_v3";
 const STORAGE_SESSION = "crgnb_session_v1";
 const STORAGE_ORDERS = "crgnb_orders_v1";
 
@@ -13,8 +13,8 @@ const PRODUCTS = [
 function seed() {
   if (!localStorage.getItem(STORAGE_USERS)) {
     const users = [
-      { email: "test@lab.demo", name: "Demo Laboratory", org: "Demo Hospital Laboratory", role: "lab", status: "approved", password: "Testlab2026" },
-      { email: "dsmit@pharmacommercialconsulting.com", name: "D Smit", org: "Pharma Commercial Consulting", role: "admin", status: "approved", password: "Approve2026" }
+      { email: "test@lab.demo", name: "Demo Laboratory", org: "Demo Hospital Laboratory", role: "lab", status: "approved", noPassword: true },
+      { email: "dsmit@pharmacommercialconsulting.com", name: "D Smit", org: "Pharma Commercial Consulting", role: "admin", status: "approved", noPassword: true }
     ];
     localStorage.setItem(STORAGE_USERS, JSON.stringify(users));
   }
@@ -84,9 +84,13 @@ window.handleRegister = function (e) {
 window.handleLogin = function (e) {
   e.preventDefault();
   const email = e.target.email.value.trim().toLowerCase();
-  const password = e.target.password.value;
-  const user = users().find(u => u.email === email && u.password === password);
-  if (!user) { showMsg("login-msg", "Email or password not recognised.", "bad"); return; }
+  const password = (e.target.password.value || "");
+  const user = users().find(u => {
+    if (u.email !== email) return false;
+    if (u.noPassword || !u.password) return true;
+    return u.password === password;
+  });
+  if (!user) { showMsg("login-msg", "Email not recognised.", "bad"); return; }
   if (user.status !== "approved") {
     showMsg("login-msg", "This account is still pending Link verification. Kits cannot be ordered until approved.", "warn");
     return;

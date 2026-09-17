@@ -19,25 +19,46 @@ This is **not** an official Link or Clinigen site. Do not put live patient or cu
 
 ## Demo accounts (this build)
 
-- Lab (already approved): `Test@lab.demo` / `Testlab2026`
-- Reviewer: `Dsmit@PharmaCommercialConsulting.com` / `Approve2026`
+- Lab (already approved): `Test@lab.demo` — no password
+- Reviewer: `Dsmit@PharmaCommercialConsulting.com` — no password
 
 Auth and orders live in **browser localStorage** so the demo runs on GitHub Pages with no server. That is fine for a pitch. It is **not** fine for production.
 
-## Get it on the internet (fastest path)
+## Get it on the internet
 
-### 1. GitHub Pages
+This sandbox cannot log into your GitHub account. Create the repo on github.com, then turn on Pages.
+
+### Fastest on a phone (GitHub website)
+
+1. Unzip `crgnb-lab-portal.zip` so you have a folder of HTML/CSS/JS (not one nested zip).
+2. On github.com, sign in → **New repository**.
+   - Name: `crgnb-lab-portal` (or any name).
+   - Public.
+   - Do **not** add a README (avoids a merge mess).
+3. On the empty repo page: **uploading an existing file** → add every file **and** the `css` and `js` folders. `index.html` must sit at the **root** of the repo, not inside another folder.
+4. Commit.
+5. **Settings → Pages → Build and deployment**
+   - Source: **Deploy from a branch**
+   - Branch: `main` (or `master`) / folder: `/ (root)`
+   - Save.
+6. Wait 1–2 minutes. URL will be  
+   `https://YOUR-USERNAME.github.io/crgnb-lab-portal/`
+
+If Pages 404s, the usual cause is that you uploaded the zip as a single file, or `index.html` is inside a subfolder. Fix: repo root must look like `index.html`, `labs.html`, `css/`, `js/`.
+
+### On a computer (git)
 
 ```bash
 cd crgnb-lab-portal
 git init
 git add .
 git commit -m "CR-GNB lab portal mock"
-gh repo create crgnb-lab-portal --public --source=. --remote=origin --push
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/crgnb-lab-portal.git
+git push -u origin main
 ```
 
-GitHub → Settings → Pages → Deploy from branch `main` / root.  
-Site URL: `https://<you>.github.io/crgnb-lab-portal/`
+Then Settings → Pages as above.
 
 If the repo is a project site (not user site), links are already relative (`css/styles.css`) so they work.
 
