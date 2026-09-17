@@ -64,11 +64,13 @@ img { max-width: 100%; }
   color: var(--teal-800);
 }
 .brand-mark .sub {
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 22px;
+  letter-spacing: .04em;
   color: #6aa000;
   font-weight: 700;
-  margin-top: 3px;
+  margin-top: 4px;
+  line-height: 1.15;
+  max-width: 22em;
 }
 .brand-mark .org {
   font-size: 10px;
