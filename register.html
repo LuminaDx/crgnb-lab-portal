@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register laboratory | Link lab portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="dev-ribbon">DEV CONCEPT</div>
+  <header class="header">
+    <a class="brand" href="index.html"><div class="brand-mark"><div class="word">CR-GNB</div><div class="sub">CARBAPENEM-RESISTANT GRAM-NEGATIVES</div><div class="org">Link · a Clinigen company</div></div></a>
+    <nav class="nav">
+      <a href="index.html">The infections</a>
+      <a href="labs.html">For laboratories</a>
+      <span id="auth-slot"></span>
+    </nav>
+  </header>
+  <section class="wrap">
+    <h2>Request a laboratory account</h2>
+    <p class="lead">Institutional email only. Link reviews whether the site is an eligible hospital or NATA-accredited pathology service. Kits are not invoiced. Access stays pending until that check is done.</p>
+    <form class="form" onsubmit="handleRegister(event)">
+      <div id="register-msg"></div>
+      <label>Contact name</label>
+      <input name="name" required>
+      <label>Institutional email</label>
+      <input name="email" type="email" required>
+      <label>Hospital / laboratory</label>
+      <input name="org" required>
+      <label>Role</label>
+      <select name="roleType" required>
+        <option value="">Select</option>
+        <option>Clinical microbiologist</option>
+        <option>Laboratory manager</option>
+        <option>Senior scientist</option>
+        <option>Antimicrobial stewardship / ID</option>
+      </select>
+      <label>NATA / lab identifier</label>
+      <input name="nata" placeholder="If known">
+      <label>Phone</label>
+      <input name="phone" required>
+      <label>Delivery address for kits</label>
+      <textarea name="address" required></textarea>
+      <label>Why this laboratory needs the pack</label>
+      <textarea name="reason" required></textarea>
+      <label>Choose a password</label>
+      <input name="password" type="password" minlength="8" required>
+      <p class="note">No payment details are collected. Approval is a human check by the supplier.</p>
+      <button class="btn btn-lime" type="submit" style="margin-top:16px">Submit for verification</button>
+    </form>
+    <div class="card" style="margin-top:22px;max-width:640px">
+      <h3>Demo logins (this build only)</h3>
+      <p class="note">Approved lab: <strong>Test@lab.demo</strong> / Testlab2026<br>
+      Reviewer: <strong>Dsmit@PharmaCommercialConsulting.com</strong> / Approve2026</p>
+    </div>
+  </section>
+  <footer>
+    <div class="disclaimer" style="border:0;margin:0 auto;padding:24px">Development mock-up. Replace the in-browser store with a real identity provider before any live data.</div>
+  </footer>
+  <script>
+    window.FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_ME";
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

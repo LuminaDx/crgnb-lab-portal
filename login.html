@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in | Link lab portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="dev-ribbon">DEV CONCEPT</div>
+  <header class="header">
+    <a class="brand" href="index.html"><div class="brand-mark"><div class="word">CR-GNB</div><div class="sub">CARBAPENEM-RESISTANT GRAM-NEGATIVES</div><div class="org">Link · a Clinigen company</div></div></a>
+    <nav class="nav">
+      <a href="register.html">Register</a>
+      <span id="auth-slot"></span>
+    </nav>
+  </header>
+  <section class="wrap">
+    <h2>Laboratory sign-in</h2>
+    <form class="form" onsubmit="handleLogin(event)">
+      <div id="login-msg"></div>
+      <label>Email</label>
+      <input name="email" type="email" required>
+      <label>Password</label>
+      <input name="password" type="password" required>
+      <button class="btn btn-lime" type="submit" style="margin-top:16px">Log in</button>
+      <p class="note">Pending accounts cannot order until Link approves them.</p>
+    </form>
+  </section>
+  <script src="js/app.js"></script>
+</body>
+</html>

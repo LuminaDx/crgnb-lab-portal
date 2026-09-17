@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order kits | Link lab portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="dev-ribbon">DEV CONCEPT</div>
+  <header class="header">
+    <a class="brand" href="index.html"><div class="brand-mark"><div class="word">CR-GNB</div><div class="sub">CARBAPENEM-RESISTANT GRAM-NEGATIVES</div><div class="org">Link · a Clinigen company</div></div></a>
+    <nav class="nav">
+      <a href="labs.html">Pack contents</a>
+      <span id="auth-slot"></span>
+    </nav>
+  </header>
+  <section class="wrap">
+    <h2>Order testing kits</h2>
+    <p class="lead">Approved laboratories only. Enter quantities. Nothing is billed to the lab. Dispatch goes to the verified departmental address.</p>
+    <form id="order-form" onsubmit="handleOrder(event)">
+      <div id="order-msg"></div>
+      <div id="order-table"></div>
+      <label>Deliver to (ward / department / loading dock)</label>
+      <input name="deliverTo" required>
+      <label>Notes for the warehouse</label>
+      <textarea name="notes" placeholder="Opening hours, cold-chain, alternative receiver"></textarea>
+      <button class="btn btn-lime" type="submit" style="margin-top:16px">Submit order</button>
+    </form>
+  </section>
+  <script>
+    window.FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_ME";
+  </script>
+  <script src="js/app.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", renderOrderTable);</script>
+</body>
+</html>
