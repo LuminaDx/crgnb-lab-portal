@@ -158,7 +158,7 @@ th { color: var(--navy); font-weight: 650; background: var(--blue-soft); }
   padding: 20px 28px 28px;
 }
 .dev-ribbon {
-  background: var(--magenta);
+  background: #1A6BB5;
   color: #fff;
   text-align: center;
   font-size: 12px;
