@@ -93,7 +93,7 @@ a:hover { text-decoration: underline; }
 
 .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 60px; }
 .hero {
-  background: linear-gradient(120deg, var(--navy) 0%, var(--purple) 55%, var(--magenta) 100%);
+  background: linear-gradient(120deg, #1B2A4A 0%, #4a2a6a 40%, #7a3d8f 70%, #a04578 100%);
   color: #fff;
   padding: 56px 20px 48px;
 }
@@ -167,10 +167,18 @@ th { color: var(--navy); font-weight: 650; background: var(--blue-soft); }
   padding: 5px;
 }
 .band-blue {
-  background: var(--blue);
+  background: #1A6BB5;
   color: #fff;
-  padding: 14px 20px;
-  margin: 20px 0;
+  padding: 18px 24px;
+  margin: 24px 0 16px;
   border-radius: 8px;
 }
-.band-blue h2, .band-blue h3 { color: #fff; border: 0; }
+.band-blue h2, .band-blue h3 { color: #fff; border: 0; margin: 0 0 6px; }
+.band-purple {
+  background: linear-gradient(90deg, #3d1a4e 0%, #6E3480 50%, #9B3A6A 100%);
+  color: #fff;
+  padding: 18px 24px;
+  margin: 28px 0 16px;
+  border-radius: 8px;
+}
+.band-purple h2, .band-purple h3 { color: #fff; border: 0; margin: 0; }
