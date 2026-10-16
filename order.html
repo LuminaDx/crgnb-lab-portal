@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order materials | CR-GNB program</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="dev-ribbon">DEVELOPMENT CONCEPT</div>
+  <div class="topbar">
+    <span>Australia · Hospital & pathology laboratories</span>
+    <span>Healthcare professional access</span>
+  </div>
+  <header class="header">
+    <a class="brand" href="education.html">
+      <div class="word">CR-GNB</div>
+      <div class="sub">TESTING PROGRAM</div>
+    </a>
+    <nav class="nav"><span id="auth-slot"></span></nav>
+  </header>
+
+  <div class="wrap">
+    <h1>Request laboratory materials</h1>
+    <p class="lead">Enter the hospital code provided by the program team. The code determines which materials your site can request and applies quantity limits.</p>
+
+    <div class="card">
+      <form onsubmit="lookupCode(event)">
+        <label>Hospital program code</label>
+        <input name="code" required placeholder="Enter code" style="text-transform:uppercase">
+        <p class="note">Demo codes for this build: <strong>DISC-DEMO</strong> (discs only) · <strong>FULL-DEMO</strong> (discs + MIC option)</p>
+        <button class="btn btn-navy" type="submit">Continue</button>
+      </form>
+      <div id="code-result"></div>
+    </div>
+
+    <div class="card">
+      <h3>What happens next</h3>
+      <ol>
+        <li>Your request is emailed to the program team.</li>
+        <li>The team reviews the site, code, and quantities.</li>
+        <li>Approved orders are forwarded to the distributor for fulfilment.</li>
+        <li>The program covers the materials and shipping.</li>
+      </ol>
+      <p class="note">Public hospital laboratories only. Do not order more than you can use before expiry.</p>
+    </div>
+  </div>
+
+  <footer class="footer">Development concept. Orders are reviewed before fulfilment.</footer>
+  <script src="js/app.js"></script>
+  <script>requireHcp();</script>
+</body>
+</html>
