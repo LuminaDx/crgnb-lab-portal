@@ -1,17 +1,21 @@
 :root {
-  --navy: #1E3464;
-  --navy-dark: #15284d;
-  --navy-soft: #2a4578;
-  --text: #555555;
+  --navy: #1B2A4A;
+  --navy-dark: #121d35;
+  --purple: #5C2D6C;
+  --purple-soft: #7a3d8f;
+  --magenta: #8B3A6B;
+  --blue: #1E6BB8;
+  --blue-bright: #2E8AD6;
+  --text: #4a5568;
   --ink: #2c3a4a;
   --muted: #6b7a8a;
   --line: #e2e8f0;
   --paper: #ffffff;
-  --bg: #f7f9fc;
+  --bg: #f6f8fb;
   --ok: #0f7a4a;
   --warn: #b45309;
   --radius: 10px;
-  --shadow: 0 8px 30px rgba(30, 52, 100, 0.08);
+  --shadow: 0 8px 30px rgba(27, 42, 74, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -28,8 +32,8 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; }
 
 .topbar {
-  background: var(--navy);
-  color: #e8eef8;
+  background: var(--purple);
+  color: #f5eef8;
   font-size: 12.5px;
   letter-spacing: .03em;
   padding: 8px 28px;
@@ -58,7 +62,7 @@ img { max-width: 100%; }
 .brand .sub {
   font-size: 13px;
   letter-spacing: .04em;
-  color: var(--navy-soft);
+  color: var(--purple);
   font-weight: 600;
   margin-top: 3px;
 }
@@ -77,15 +81,21 @@ img { max-width: 100%; }
 }
 .btn-navy { background: var(--navy); color: #fff; }
 .btn-navy:hover { background: var(--navy-dark); text-decoration: none; }
+.btn-purple { background: var(--purple); color: #fff; }
+.btn-purple:hover { background: #4a2458; text-decoration: none; }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue:hover { background: #185a9e; text-decoration: none; }
 .btn-outline { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
 .btn-outline:hover { background: #f4f7fb; text-decoration: none; }
 
 .wrap { max-width: 980px; margin: 0 auto; padding: 32px 20px 60px; }
 .hero {
-  background: linear-gradient(180deg, #fff 0%, #f4f7fb 100%);
-  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--purple) 100%);
+  color: #fff;
+  border-bottom: none;
   padding: 48px 20px 40px;
 }
+.hero h1, .hero .lead { color: #fff; }
 .hero-inner { max-width: 980px; margin: 0 auto; }
 h1 { color: var(--navy); font-size: 32px; line-height: 1.2; margin: 0 0 12px; font-weight: 750; }
 h2 { color: var(--navy); font-size: 24px; margin: 28px 0 12px; }
@@ -144,8 +154,8 @@ th { color: var(--navy); font-weight: 650; }
   padding: 18px 28px 28px;
 }
 .dev-ribbon {
-  background: #f59e0b;
-  color: #1a1a1a;
+  background: var(--magenta);
+  color: #fff;
   text-align: center;
   font-size: 12px;
   font-weight: 700;
